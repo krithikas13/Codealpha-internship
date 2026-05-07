@@ -1,0 +1,17 @@
+import pandas as pd
+
+df = pd.read_csv("quotes.csv")
+
+# Basic info
+print(df.head())
+print(df.info())
+print(df.describe())
+
+# Check missing values
+print(df.isnull().sum())
+
+# Unique authors count
+print("Unique Authors:", df["Author"].nunique())
+
+# Most frequent author
+print(df["Author"].value_counts().head())
