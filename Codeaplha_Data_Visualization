@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df = pd.read_csv("quotes.csv")
+
+# Top authors
+top_authors = df["Author"].value_counts().head(5)
+
+plt.figure()
+top_authors.plot(kind="bar")
+plt.title("Top 5 Authors")
+plt.xlabel("Authors")
+plt.ylabel("Number of Quotes")
+plt.show()
